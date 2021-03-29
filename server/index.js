@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const uid =require('uid')
+const uid = require('uid')
 const port = 3000
 
 let objs = {}
@@ -17,10 +17,10 @@ app.post('/', function (req, res) {
 });
 
 app.post('/share', (req, res) => {
-    let id = uid(16);
+    let id = uid(16)
     console.log(id);
     objs[id] = req.body;
-//    console.log(`This is body: ${req.body}`);
+    console.log(`This is body: ${req.body}`);
     res.send({success:true, link: `http://localhost:3000/${id}`});
 });
 
